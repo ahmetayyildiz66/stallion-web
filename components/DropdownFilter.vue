@@ -10,9 +10,12 @@
     <IconCaretDown />
   </button>
 
-  <div v-if="filter.isOpen" v-for="option in filter.options" :key="option.id">
-    <input :id="option.label" type="checkbox" v-model="option.label" />
-    <label :for="option.label">{{ option.label }}</label>
+  <div v-if="filter.isOpen">
+    <CustomCheckbox
+      v-for="option in filter.options"
+      :option="option"
+      @change="onChange"
+    />
   </div>
 </template>
 
@@ -20,4 +23,8 @@
 const { toggleDropdown } = useFilters();
 const { filter } = defineProps(["filter"]);
 
+const onChange = (event: Event) => {
+  const { value } = event.target as HTMLInputElement;
+  console.log("value: ", value);
+};
 </script>
