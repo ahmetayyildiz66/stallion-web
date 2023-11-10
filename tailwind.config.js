@@ -16,15 +16,12 @@ export default {
         },
         black: {
           50: '#262626'
+        },
+        yellow: {
+          50: '#BF9001'
         }
       },
-      // container: {
-      //   xl
-      // }
     },
-    // container: {
-
-    // }
   },
   plugins: [],
 };
