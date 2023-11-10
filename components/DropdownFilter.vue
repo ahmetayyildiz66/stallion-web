@@ -1,5 +1,8 @@
 <template>
-  <button class="flex justify-between items-center w-full h-20">
+  <button
+    class="flex justify-between items-center w-full h-20"
+    @click="toggleDropdown(filter.id)"
+  >
     <div class="flex items-center">
       <IconBirthday class="ml-2 mr-4" />
       <span>{{ filter.label }}</span>
@@ -13,7 +16,7 @@
   </div>
 </template>
 
-<script setup>
-const { filter } = defineProps(['filter'])
-
+<script setup lang="ts">
+const { toggleDropdown } = useFilters();
+const { filter } = defineProps(["filter"]);
 </script>
