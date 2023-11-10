@@ -1,3 +1,19 @@
 <template>
-  <div class="pt-6">Main</div>
+  <section class="pt-6">
+    <div class="grid grid-cols-3 gap-10">
+      
+      <HorseFilters />
+
+      <div>
+        <p class="mb-12">187 horses</p>
+        <p class="bg-orange-500">Car 1</p>
+      </div>
+
+      <div>
+        <button class="mb-12">Sort</button>
+        <p class="bg-blue-600">Car 2</p>
+      </div>
+
+    </div>
+  </section>
 </template>
