@@ -6,7 +6,7 @@
 
       <div>
         <p class="mb-12">187 horses</p>
-        <p class="bg-orange-500">Car 1</p>
+        <FiltersList />
       </div>
 
       <div>

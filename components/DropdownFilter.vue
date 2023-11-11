@@ -20,11 +20,20 @@
 </template>
 
 <script setup lang="ts">
-const { toggleDropdown } = useFilters();
+const { toggleDropdown, applyFilter } = useFilters();
 const { filter } = defineProps(["filter"]);
 
 const onChange = (event: Event) => {
   const { value } = event.target as HTMLInputElement;
-  console.log("value: ", value);
+
+  let filteredItem
+  filter.options.forEach((opt: any) => {
+    if (opt.id === value) {
+      opt.isChecked = !opt.isChecked
+      filteredItem = opt
+    }
+  });
+
+  applyFilter(filteredItem!);
 };
 </script>
