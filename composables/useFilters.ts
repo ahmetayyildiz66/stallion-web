@@ -14,8 +14,12 @@ const applyFilter = (filteredItem: { id: string, isChecked: boolean, label: stri
   if (isChecked) {
     appliedFilters.value.push(filteredItem.label)
   } else {
-    appliedFilters.value = appliedFilters.value.filter(filter => filter !== label)
+    removeFilter(label)
   }
+}
+
+const removeFilter = (label: string) => {
+  appliedFilters.value = appliedFilters.value.filter(filter => filter !== label)
 }
 
 export const useFilters = () => {
@@ -24,5 +28,6 @@ export const useFilters = () => {
     appliedFilters,
     toggleDropdown,
     applyFilter,
+    removeFilter
   };
 };

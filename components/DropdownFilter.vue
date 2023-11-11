@@ -14,6 +14,7 @@
     <CustomCheckbox
       v-for="option in filter.options"
       :option="option"
+      :is-checked="option.isChecked"
       @change="onChange"
     />
   </div>
@@ -26,6 +27,7 @@ const { addQuery, removeQuery, queryProps } = useRouteQuery();
 const { filter } = defineProps(["filter"]);
 
 const onChange = (event: Event) => {
+  const query = router.currentRoute.value.query;
   const { value } = event.target as HTMLInputElement;
 
   let filteredItem;
@@ -40,7 +42,7 @@ const onChange = (event: Event) => {
         removeQuery(filter.id, value);
       }
 
-      router.push({ query: queryProps.value });
+      router.push({ query: {...query, ...queryProps.value} });
     }
   });
 

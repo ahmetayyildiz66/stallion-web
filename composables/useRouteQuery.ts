@@ -16,11 +16,10 @@ const removeQuery = (name: string, id: string) => {
   queryProps.value[name] = queryProps.value[name].filter((prop) => prop !== id);
 }
 
-
 export const useRouteQuery = () => {
   return {
     queryProps,
     addQuery,
-    removeQuery
+    removeQuery,
   }
 }

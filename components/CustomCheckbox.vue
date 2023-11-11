@@ -5,7 +5,7 @@
     class="ms-2 text-sm font-medium text-white hover:cursor-pointer flex items-center mb-6"
   >
     <input
-      :checked="option.isChecked"
+      :checked="isChecked"
       :id="option.label"
       :value="option.id"
       type="checkbox"
@@ -17,5 +17,5 @@
 </template>
 
 <script lang="ts" setup>
-const { option } = defineProps(["option"]);
+const { option, isChecked } = defineProps(["option", "isChecked"]);
 </script>
