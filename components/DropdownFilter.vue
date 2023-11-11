@@ -20,17 +20,27 @@
 </template>
 
 <script setup lang="ts">
+const router = useRouter();
 const { toggleDropdown, applyFilter } = useFilters();
+const { addQuery, removeQuery, queryProps } = useRouteQuery();
 const { filter } = defineProps(["filter"]);
 
 const onChange = (event: Event) => {
   const { value } = event.target as HTMLInputElement;
 
-  let filteredItem
+  let filteredItem;
   filter.options.forEach((opt: any) => {
     if (opt.id === value) {
-      opt.isChecked = !opt.isChecked
-      filteredItem = opt
+      opt.isChecked = !opt.isChecked;
+      filteredItem = opt;
+
+      if (opt.isChecked) {
+        addQuery(filter.id, value);
+      } else {
+        removeQuery(filter.id, value);
+      }
+
+      router.push({ query: queryProps.value });
     }
   });
 
