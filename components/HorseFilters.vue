@@ -14,9 +14,12 @@
 <script setup lang="ts">
 const router = useRouter();
 const { filters } = useFilters();
+const { initQueryProps } = useRouteQuery()
 
 onMounted(() => {
   const query = router.currentRoute.value.query;
+
+  initQueryProps(query)
 
   for (const key of Object.keys(router.currentRoute.value.query)) {
     filters.forEach((filter) => {
