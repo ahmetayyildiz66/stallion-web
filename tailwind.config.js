@@ -13,6 +13,7 @@ export default {
       colors: {
         gray: {
           50: "#989EA7",
+          150: '#919192'
         },
         black: {
           50: '#262626'

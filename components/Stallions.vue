@@ -43,7 +43,8 @@
           <input
             :id="horse.name"
             :value="horse.id"
-            @change="updateCompareList(horse.id)"
+            :checked="checkInCompareList(horse.name)"
+            @change="updateCompareList(horse.name)"
             type="checkbox"
             class="w-6 h-6 accent-yellow-50 bg-gray-100 border-gray-300 rounded hover:cursor-pointer"
           />
@@ -59,7 +60,7 @@
 import { StarIcon } from "@heroicons/vue/24/outline";
 import { StarIcon as StarIconSolid } from "@heroicons/vue/24/solid";
 const { horses, toggleStar } = useFilters();
-const { toggleCompareList } = useCompare()
+const { compareList, toggleCompareList } = useCompare()
 
 const emit = defineEmits(["stallionCount"]);
 
@@ -67,7 +68,11 @@ onMounted(() => {
   emit("stallionCount", horses.length);
 });
 
-const updateCompareList = (id: string) => {
-  toggleCompareList(id)
+const updateCompareList = (name: string) => {
+  toggleCompareList(name)
+}
+
+const checkInCompareList = (name: string) => {
+  return compareList.value.findIndex(item => item === name) !== -1
 }
 </script>

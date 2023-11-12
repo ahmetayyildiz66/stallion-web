@@ -6,7 +6,7 @@
       </NuxtLink>
       <NuxtLink to="/compare" class="text-white">
         <p class="relative">
-          <span>Compare</span>
+          <span>Comparison</span>
           <span
             v-if="compareList.length"
             class="bg-yellow-50 w-5 h-5 text-center rounded-full absolute text-sm -right-4 -top-2"
