@@ -21,6 +21,9 @@ export default {
           50: '#BF9001'
         }
       },
+      gridTemplateColumns: {
+        'filter': '33% 1fr'
+      }
     },
   },
   plugins: [],

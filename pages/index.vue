@@ -1,19 +1,17 @@
 <template>
   <section class="pt-6">
-    <div class="grid grid-cols-3 gap-10">
-      
+    <div class="grid grid-cols-filter gap-10">
       <HorseFilters />
 
-      <div>
-        <p class="mb-12">187 horses</p>
+      <div class="space-y-12">
+        <SortFilter />
         <FiltersList />
-      </div>
 
-      <div>
-        <button class="mb-12">Sort</button>
-        <p class="bg-blue-600">Car 2</p>
+        <Stallions />
       </div>
-
     </div>
   </section>
 </template>
+
+<script lang="ts" setup>
+</script>

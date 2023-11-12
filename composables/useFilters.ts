@@ -1,4 +1,5 @@
 import { filters } from "~/utils/filterData";
+import { horses } from "~/utils/horsesData";
 
 interface OptionFilter {
   filterId: string,
@@ -14,6 +15,14 @@ const toggleDropdown = (id: string) => {
   filters.forEach(filter =>
     filter.isOpen = filter.id === id ? !filter.isOpen : false
   )
+}
+
+const getStallions = () => {
+  return horses
+}
+
+const stallionCount = () => {
+  return horses.length
 }
 
 const applyFilter = (filteredItem: OptionFilter) => {
@@ -49,6 +58,8 @@ export const useFilters = () => {
     toggleDropdown,
     applyFilter,
     removeFilter,
-    removeOption
+    removeOption,
+    getStallions,
+    stallionCount
   };
 };
