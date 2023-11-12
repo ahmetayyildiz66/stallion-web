@@ -17,6 +17,10 @@ const removeQuery = (name: string, id: string) => {
   queryProps.value[name] = queryProps.value[name].filter((prop) => prop !== id);
 }
 
+const resetQuery = () => {
+  queryProps.value = {}
+}
+
 const initQueryProps = (props: any) => {
   if (Object.keys(props).length) {
     Object.keys(props).forEach(p => {
@@ -36,5 +40,6 @@ export const useRouteQuery = () => {
     addQuery,
     removeQuery,
     initQueryProps,
+    resetQuery
   }
 }

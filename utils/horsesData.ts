@@ -1,6 +1,6 @@
-export const horses = [
+export const horses = reactive([
   {
-    id: 1,
+    id: '1',
     name: 'Armigates Boy',
     birthYear: 2002,
     height: 161,
@@ -12,6 +12,7 @@ export const horses = [
     offSpring: ['1° foal 2014', '4 Approved'],
     others: ['Live foal guarantee', 'Only fresh in France'],
     image: 'horse1.png',
+    isFavorite: false,
     semen: [
       {
         price: 1200,
@@ -27,7 +28,7 @@ export const horses = [
     ]
   },
   {
-    id: 2,
+    id: '2',
     name: 'Big Star',
     birthYear: 2003,
     height: 172,
@@ -39,6 +40,7 @@ export const horses = [
     offSpring: ['1° foal 2019', '12 Approved'],
     others: ['BWP Ambassador', 'ISCI Available (Sexed)'],
     image: 'horse2.png',
+    isFavorite: false,
     semen: [
       {
         price: 1000,
@@ -52,7 +54,7 @@ export const horses = [
     ]
   },
   {
-    id: 3,
+    id: '3',
     name: 'Sunday JM',
     birthYear: 2018,
     height: 168,
@@ -64,6 +66,7 @@ export const horses = [
     offSpring: ['1° foal 2022'],
     others: ['BWP Vice-Champion 2021', 'Live foal guarantee'],
     image: 'horse3.jpeg',
+    isFavorite: false,
     semen: [
       {
         price: 750,
@@ -72,7 +75,7 @@ export const horses = [
     ]
   },
   {
-    id: 4,
+    id: '4',
     name: 'Sunday JM',
     birthYear: 2018,
     height: 168,
@@ -84,6 +87,7 @@ export const horses = [
     offSpring: ['1° foal 2022'],
     others: ['BWP Vice-Champion 2021', 'Live foal guarantee'],
     image: 'horse4.jpeg',
+    isFavorite: false,
     semen: [
       {
         price: 750,
@@ -92,7 +96,7 @@ export const horses = [
     ]
   },
   {
-    id: 5,
+    id: '5',
     name: 'Sunday JM',
     birthYear: 2018,
     height: 168,
@@ -104,6 +108,7 @@ export const horses = [
     offSpring: ['1° foal 2022'],
     others: ['BWP Vice-Champion 2021', 'Live foal guarantee'],
     image: 'horse5.jpeg',
+    isFavorite: false,
     semen: [
       {
         price: 750,
@@ -112,7 +117,7 @@ export const horses = [
     ]
   },
   {
-    id: 6,
+    id: '6',
     name: 'Sunday JM2',
     birthYear: 2018,
     height: 168,
@@ -124,6 +129,7 @@ export const horses = [
     offSpring: ['1° foal 2022'],
     others: ['BWP Vice-Champion 2021', 'Live foal guarantee'],
     image: 'horse6.jpeg',
+    isFavorite: false,
     semen: [
       {
         price: 750,
@@ -132,7 +138,7 @@ export const horses = [
     ]
   },
   {
-    id: 7,
+    id: '7',
     name: 'Sunday JM',
     birthYear: 2018,
     height: 168,
@@ -144,6 +150,7 @@ export const horses = [
     offSpring: ['1° foal 2022'],
     others: ['BWP Vice-Champion 2021', 'Live foal guarantee'],
     image: 'horse1.png',
+    isFavorite: false,
     semen: [
       {
         price: 750,
@@ -152,7 +159,7 @@ export const horses = [
     ]
   },
   {
-    id: 8,
+    id: '8',
     name: 'Sunday JM',
     birthYear: 2018,
     height: 168,
@@ -164,6 +171,7 @@ export const horses = [
     offSpring: ['1° foal 2022'],
     others: ['BWP Vice-Champion 2021', 'Live foal guarantee'],
     image: 'horse3.jpeg',
+    isFavorite: false,
     semen: [
       {
         price: 750,
@@ -171,4 +179,4 @@ export const horses = [
       },
     ]
   },
-]
+])

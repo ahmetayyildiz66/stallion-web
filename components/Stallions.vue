@@ -1,15 +1,31 @@
 <template>
   <section class="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
     <div
-      v-for="horse in getStallions()"
+      v-for="horse in horses"
       :key="horse.id"
       class="border border-yellow-50 rounded-lg p-2 shadow-md shadow-gray-500 hover:cursor-pointer"
     >
-      <figure class="text-white flex space-x-2 md:space-x-0 md:grid md:grid-cols-2 md:gap-2 gap-0">
+      <figure
+        class="text-white flex space-x-2 md:space-x-0 md:grid md:grid-cols-2 md:gap-2 gap-0"
+      >
         <NuxtImg :src="horse.image" class="border-none" />
 
         <figcaption class="space-y-1">
-          <h2 class="text-yellow-50 lg:text-lg 2xl:text-xl">{{ horse.name }}</h2>
+          <button type="button" class="w-full flex justify-end">
+            <StarIcon
+              v-if="!horse.isFavorite"
+              class="w-5 h-5 text-yellow-50"
+              @click="toggleStar(horse.id)"
+            />
+            <StarIconSolid
+              v-else
+              class="w-5 h-5 text-yellow-50"
+              @click="toggleStar(horse.id)"
+            />
+          </button>
+          <h2 class="text-yellow-50 lg:text-lg 2xl:text-xl">
+            <span>{{ horse.name }}</span>
+          </h2>
           <span class="text-xs tracking-tight inline-block">{{
             horse.gen
           }}</span>
@@ -23,11 +39,14 @@
 </template>
 
 <script lang="ts" setup>
-const { getStallions } = useFilters();
+import { StarIcon } from "@heroicons/vue/24/outline";
+import { StarIcon as StarIconSolid } from "@heroicons/vue/24/solid";
+const { horses, toggleStar } = useFilters();
 
 const emit = defineEmits(["stallionCount"]);
 
 onMounted(() => {
-  emit("stallionCount", getStallions().length);
+  emit("stallionCount", horses.length);
 });
+
 </script>

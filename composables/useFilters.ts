@@ -47,19 +47,35 @@ const removeOption = (filterId: string, optionId: string) => {
   })
 }
 
+const resetFilters = () => {
+  appliedFilters.value = []
+  filters.map(filter => filter.options.map((opt) => opt.isChecked = false))
+}
+
 const removeFilter = (filteredItem: OptionFilter) => {
   appliedFilters.value = appliedFilters.value.filter(filter => filter.optId !== filteredItem.optId)
+}
+
+const toggleStar = (id: string) => {
+  horses.forEach(horse => {
+    if (horse.id === id) {
+      horse.isFavorite = !horse.isFavorite
+    }
+  })
 }
 
 export const useFilters = () => {
   return {
     filters,
     appliedFilters,
+    horses,
     toggleDropdown,
     applyFilter,
     removeFilter,
     removeOption,
     getStallions,
-    stallionCount
+    stallionCount,
+    toggleStar,
+    resetFilters
   };
 };
