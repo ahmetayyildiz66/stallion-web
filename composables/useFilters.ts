@@ -1,6 +1,14 @@
 import { filters } from "~/utils/filterData";
 
-const appliedFilters = ref<string[]>([])
+interface OptionFilter {
+  filterId: string,
+  optId: string,
+  optChecked: boolean,
+  optLabel: string,
+}
+
+
+const appliedFilters = ref<OptionFilter[]>([])
 
 const toggleDropdown = (id: string) => {
   filters.forEach(filter =>
@@ -8,18 +16,30 @@ const toggleDropdown = (id: string) => {
   )
 }
 
-const applyFilter = (filteredItem: { id: string, isChecked: boolean, label: string }) => {
-  const { isChecked, label } = filteredItem
+const applyFilter = (filteredItem: OptionFilter) => {
+  const { optChecked } = filteredItem
 
-  if (isChecked) {
-    appliedFilters.value.push(filteredItem.label)
+  if (optChecked) {
+    appliedFilters.value.push(filteredItem)
   } else {
-    removeFilter(label)
+    removeFilter(filteredItem)
   }
 }
 
-const removeFilter = (label: string) => {
-  appliedFilters.value = appliedFilters.value.filter(filter => filter !== label)
+const removeOption = (filterId: string, optionId: string) => {
+  filters.forEach(filter => {
+    if (filter.id === filterId) {
+      filter.options.forEach(opt => {
+        if (opt.id === optionId) {
+          opt.isChecked = false
+        }
+      })
+    }
+  })
+}
+
+const removeFilter = (filteredItem: OptionFilter) => {
+  appliedFilters.value = appliedFilters.value.filter(filter => filter.optId !== filteredItem.optId)
 }
 
 export const useFilters = () => {
@@ -28,6 +48,7 @@ export const useFilters = () => {
     appliedFilters,
     toggleDropdown,
     applyFilter,
-    removeFilter
+    removeFilter,
+    removeOption
   };
 };

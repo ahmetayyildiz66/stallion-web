@@ -6,6 +6,11 @@
     <div class="flex items-center text-yellow-50">
       <FilterIcons :icon="filter.icon" />
       <span class="text-white">{{ filter.label }}</span>
+      <span
+        class="ml-3 bg-gray-900 text-yellow-50 w-5 h-5 p-3 text-center flex items-center justify-center rounded-full"
+        v-if="appliedFilterCount > 0"
+        >{{ appliedFilterCount }}</span
+      >
     </div>
     <IconCaretDown />
   </button>
@@ -42,10 +47,22 @@ const onChange = (event: Event) => {
         removeQuery(filter.id, value);
       }
 
-      router.push({ query: {...query, ...queryProps.value} });
+      router.push({ query: { ...query, ...queryProps.value } });
     }
   });
 
-  applyFilter(filteredItem!);
+  if (filteredItem) {
+    const { id, isChecked, label } = filteredItem;
+    applyFilter({
+      filterId: filter.id,
+      optId: id,
+      optChecked: isChecked,
+      optLabel: label,
+    });
+  }
 };
+
+const appliedFilterCount = computed(() => {
+  return filter.options.filter((opt: any) => opt.isChecked).length;
+});
 </script>

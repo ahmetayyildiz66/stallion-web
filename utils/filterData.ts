@@ -1,4 +1,4 @@
-interface Filter {
+export interface Filter {
   id: string;
   isOpen: boolean;
   label: string;

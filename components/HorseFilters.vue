@@ -13,31 +13,32 @@
 
 <script setup lang="ts">
 const router = useRouter();
-const { filters } = useFilters();
-const { initQueryProps } = useRouteQuery()
+const { filters, applyFilter } = useFilters();
+const { initQueryProps } = useRouteQuery();
 
 onMounted(() => {
   const query = router.currentRoute.value.query;
 
-  initQueryProps(query)
+  initQueryProps(query);
 
   for (const key of Object.keys(router.currentRoute.value.query)) {
     filters.forEach((filter) => {
       if (filter.id === key) {
         const values = query[key];
-        if (Array.isArray(values)) {
-          values.forEach((val) => {
+        const arrValues = Array.isArray(values) ? values : values?.split(" ");
+        if (arrValues?.length) {
+          arrValues.forEach((val) => {
             filter.options.forEach((opt) => {
               if (opt.id === val) {
                 opt.isChecked = true;
+                applyFilter({
+                  filterId: filter.id,
+                  optId: opt.id,
+                  optChecked: opt.isChecked,
+                  optLabel: opt.label,
+                });
               }
             });
-          });
-        } else {
-          filter.options.forEach((opt) => {
-            if (opt.id === values) {
-              opt.isChecked = true;
-            }
           });
         }
       }
