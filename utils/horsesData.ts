@@ -55,7 +55,7 @@ export const horses = reactive([
   },
   {
     id: '3',
-    name: 'Sunday JM',
+    name: 'Rien a Declarer MxL',
     birthYear: 2018,
     height: 168,
     color: 'Brown',
@@ -65,7 +65,7 @@ export const horses = reactive([
     motherline: ['Cordial 1.60m', 'Cashpaid J&F 1.55m'],
     offSpring: ['1° foal 2022'],
     others: ['BWP Vice-Champion 2021', 'Live foal guarantee'],
-    image: 'horse3.jpeg',
+    image: 'horse2.png',
     isFavorite: false,
     semen: [
       {
@@ -76,7 +76,7 @@ export const horses = reactive([
   },
   {
     id: '4',
-    name: 'Sunday JM',
+    name: 'Naxcel V',
     birthYear: 2018,
     height: 168,
     color: 'Brown',
@@ -86,7 +86,7 @@ export const horses = reactive([
     motherline: ['Cordial 1.60m', 'Cashpaid J&F 1.55m'],
     offSpring: ['1° foal 2022'],
     others: ['BWP Vice-Champion 2021', 'Live foal guarantee'],
-    image: 'horse4.jpeg',
+    image: 'horse1.png',
     isFavorite: false,
     semen: [
       {
@@ -97,7 +97,7 @@ export const horses = reactive([
   },
   {
     id: '5',
-    name: 'Sunday JM',
+    name: 'Quintino Royal Z',
     birthYear: 2018,
     height: 168,
     color: 'Brown',
@@ -107,7 +107,7 @@ export const horses = reactive([
     motherline: ['Cordial 1.60m', 'Cashpaid J&F 1.55m'],
     offSpring: ['1° foal 2022'],
     others: ['BWP Vice-Champion 2021', 'Live foal guarantee'],
-    image: 'horse5.jpeg',
+    image: 'horse2.png',
     isFavorite: false,
     semen: [
       {
@@ -118,7 +118,7 @@ export const horses = reactive([
   },
   {
     id: '6',
-    name: 'Sunday JM2',
+    name: 'Chilli Willi',
     birthYear: 2018,
     height: 168,
     color: 'Brown',
@@ -128,7 +128,7 @@ export const horses = reactive([
     motherline: ['Cordial 1.60m', 'Cashpaid J&F 1.55m'],
     offSpring: ['1° foal 2022'],
     others: ['BWP Vice-Champion 2021', 'Live foal guarantee'],
-    image: 'horse6.jpeg',
+    image: 'horse1.png',
     isFavorite: false,
     semen: [
       {
@@ -160,7 +160,7 @@ export const horses = reactive([
   },
   {
     id: '8',
-    name: 'Sunday JM',
+    name: 'Diablue PS',
     birthYear: 2018,
     height: 168,
     color: 'Brown',
@@ -170,7 +170,7 @@ export const horses = reactive([
     motherline: ['Cordial 1.60m', 'Cashpaid J&F 1.55m'],
     offSpring: ['1° foal 2022'],
     others: ['BWP Vice-Champion 2021', 'Live foal guarantee'],
-    image: 'horse3.jpeg',
+    image: 'horse2.png',
     isFavorite: false,
     semen: [
       {
