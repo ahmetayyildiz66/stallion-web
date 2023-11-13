@@ -1,6 +1,6 @@
 <template>
   <TheHeader />
-  <main class="container mx-auto">
+  <main class="mx-auto">
     <NuxtPage />
   </main>
 </template>

@@ -10,5 +10,9 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@nuxt/image"]
+  modules: ["@nuxt/image", ['@nuxtjs/google-fonts', {
+    families: {
+      Quicksand: [300]
+    }
+  }]]
 })

@@ -1,3 +1,3 @@
 <template>
-  <CompareList />
+  <CompareList class="container mx-auto" />
 </template>
